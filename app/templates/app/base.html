@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Cobra Kai Banking</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
+</head>
+<body>
+    <h1>
+        <img src="{% static 'logo.png' %}" width="600" height="200" alt="Cobra Kai Banking logo">
+    </h1>
+
+    <nav>
+        <ul>
+            <li><a href="{% url 'app:home' %}">Home</a></li>
+            <li><a href="{% url 'app:accounts' %}">Accounts</a></li>
+            <li><a href="{% url 'app:planning' %}">Planning</a></li>
+            <li><a href="{% url 'app:service' %}">Services</a></li>
+
+            {% if user.is_authenticated %}
+                <li><a href="{% url 'app:dashboard' %}">Dashboard</a></li>
+                <li>
+                    <form action="{% url 'app:logout' %}" method="post">
+                        {% csrf_token %}
+                        <button type="submit">Logout</button>
+                    </form>
+                </li>
+            {% else %}
+                <li><a href="{% url 'app:login' %}" class="split">Login</a></li>
+                <li><a href="{% url 'app:register' %}" class="split">Register</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+
+    {% if messages %}
+        <div class="container" style="margin-top: 20px;">
+            {% for message in messages %}
+                <p>{{ message }}</p>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

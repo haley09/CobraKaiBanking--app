@@ -1,0 +1,113 @@
+/* GENERAL PAGE */
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f5f5f5;
+}
+
+/* LOGO */
+h1 {
+  text-align: center;
+  margin: 0;
+  padding: 10px 0;
+  background-color: black;
+}
+
+/* NAVBAR */
+nav {
+  background-color: #50577A;
+  overflow: hidden;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+nav li {
+  list-style: none;
+}
+
+/* NAV LINKS */
+nav li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* HOVER EFFECT */
+nav li a:hover {
+  background-color: #111;
+}
+
+/* PUSH RIGHT-SIDE ITEMS */
+nav li:last-child,
+nav li:nth-last-child(2) {
+  margin-left: auto;
+}
+
+/* LOGOUT FORM */
+nav form {
+  margin: 0;
+}
+
+/* LOGOUT BUTTON */
+nav form button {
+  display: block;
+  background-color: transparent;
+  color: white;
+  border: none;
+  box-shadow: none;
+  text-align: center;
+  padding: 14px 16px;
+  font: inherit;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+/* HOVER */
+nav form button:hover {
+  background-color: #111;
+}
+/* CONTENT CONTAINER */
+.container {
+  background-color: white;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 5px;
+}
+
+/* HEADINGS */
+h2, h3 {
+  color: #333;
+}
+
+/* FORMS */
+form input {
+  padding: 8px;
+  margin: 5px 0;
+  width: 200px;
+}
+
+form button {
+  padding: 8px 12px;
+  background-color: #50577A;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #111;
+}
+
+/* TRANSACTION LIST */
+ul {
+  padding-left: 20px;
+}
