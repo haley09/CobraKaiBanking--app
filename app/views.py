@@ -1,5 +1,5 @@
 from decimal import Decimal
-import random
+import secrets
 
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, logout
@@ -108,9 +108,9 @@ def create_account(request):
         )
         return redirect("app:dashboard")
 
-    account_number = random.randint(100000, 999999)
+    account_number = generate_account_number()
     while UserBankAccount.objects.filter(account_no=account_number).exists():
-        account_number = random.randint(100000, 999999)
+        account_number = generate_account_number()
 
     UserBankAccount.objects.create(
         user=request.user,
@@ -120,6 +120,10 @@ def create_account(request):
 
     messages.success(request, "Your bank account has been created successfully.")
     return redirect("app:dashboard")
+
+
+def generate_account_number():
+    return secrets.randbelow(900000) + 100000
 
 
 @login_required

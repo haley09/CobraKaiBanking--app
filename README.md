@@ -36,11 +36,11 @@ This project was designed to simulate how a real banking system manages users, a
 ### Bank Account Management
 - One account per user
 - Unique account numbers
-- Account type support (e.g., Checking, Savings)
+- Account type support, such as checking or savings
 
 ### Transactions
 - Deposit funds
-- Withdraw funds (with validation)
+- Withdraw funds with validation
 - Automatic balance updates
 - Transaction history tracking
 
@@ -52,17 +52,19 @@ This project was designed to simulate how a real banking system manages users, a
 ---
 
 ## Project Structure
+
+```text
 CobraKaiBanking/
-├─ app/
-│ ├─ models.py # Banking logic and data models
-│ ├─ views.py # Application logic
-│ ├─ urls.py # Routes
-│ ├─ templates/ # HTML templates
-│ └─ static/ # CSS, images, assets
-│
-├─ cobrakaibanking/ # Django project configuration
-├─ manage.py
-└─ db.sqlite3
+|- app/
+|  |- models.py
+|  |- views.py
+|  |- urls.py
+|  |- templates/
+|  |- static/
+|- cobrakaibanking/
+|- manage.py
+|- db.sqlite3
+```
 
 ---
 
@@ -76,37 +78,46 @@ cd cobra-kai-banking
 ```
 
 2. Create a virtual environment:
+
 ```bash
 python -m venv venv
 ```
 
 3. Activate the environment:
+
 ```bash
 venv\Scripts\activate
 ```
 
 4. Install dependencies:
+
 ```bash
-pip install django
+pip install django whitenoise
 ```
 
 5. Run migrations:
+
 ```bash
 python manage.py makemigrations
 python manage.py migrate
 ```
 
 6. Start the server:
+
 ```bash
 python manage.py runserver
 ```
 
 7. Open in browser:
-```bash
+
+```text
 http://127.0.0.1:8000
 ```
 
+---
+
 ## How to Use
+
 1. Register a new account
 2. Log in
 3. Create a bank account
@@ -114,31 +125,30 @@ http://127.0.0.1:8000
 5. Withdraw funds
 6. View transaction history on the dashboard
 
+---
+
 ## Purpose
 
 This project was built as a portfolio piece to demonstrate:
+- Full-stack web development
+- Database design and relationships
+- Backend logic and validation
+- User authentication systems
+- Clean UI integration with backend functionality
 
-Full-stack web development
-Database design and relationships
-Backend logic and validation
-User authentication systems
-Clean UI integration with backend functionality
-
-## What I Learned
-How to structure a Django application properly
-Connecting frontend templates to backend logic
-Handling user sessions and authentication
-Managing relational data (users, accounts, transactions)
-Debugging and refactoring a complex project
+---
 
 ## Future Improvements
-Improved UI/UX design
-Multiple account types per user
-Interest calculation automation
-API integration
-Deployment (Render, Railway, or AWS)
+
+- Improved UI/UX design
+- Multiple account types per user
+- Interest calculation automation
+- API integration
+- Deployment on Render, Railway, or AWS
+
+---
 
 ## Author
 
-#### Haley Abel 
-Informatics Student – Indiana University Indianapolis
+Haley Abel  
+Informatics Student - Indiana University Indianapolis

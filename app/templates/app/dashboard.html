@@ -34,9 +34,9 @@
             <ul>
                 {% for transaction in account.transactions.all %}
                     <li>
-                        {{ transaction.created_at|date:"M d, Y H:i" }} —
-                        {{ transaction.transaction_type }} —
-                        ${{ transaction.amount }} —
+                        {{ transaction.created_at|date:"M d, Y H:i" }} &mdash;
+                        {{ transaction.transaction_type }} &mdash;
+                        ${{ transaction.amount }} &mdash;
                         Balance: ${{ transaction.balance_after_transaction }}
                     </li>
                 {% empty %}
